@@ -1,0 +1,12 @@
+https://github.com/otilrac/rtl-sdr-misc/tree/master/heatmap/heatmap.py
+
+To generate a wideband waterfall image sweep with hackrf_sweep and Kyle Keen’s heatmap.py software:
+
+git clone https://github.com/keenerd/rtl-sdr-misc. Take note of heatmap.py inside rtl-sdr-misc/heatmap.
+ 
+Scan from 1 MHz – 3 GHz, with a bin size of 100k, LNA gain of 32 and VGA gain of 8: ./hackrf_sweep -f1:3000 -w100000 -l32 -g8 > output_data.csv
+ 
+Generate the heatmap (can take some time to complete if you have a large data file from a long scan): python heatmap.py output_data.csv heatmap_image.png
+
+
+exemple https://www.rtl-sdr.com/wp-content/uploads/2017/02/sweep_sample_comp.gif
